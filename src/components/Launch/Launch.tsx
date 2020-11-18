@@ -5,14 +5,26 @@ interface Props {
   data: LaunchQuery;
 }
 
-const Launch: React.FC<Props> = ({ data }) => {
-  console.log(data);
+const Launch: React.FC<Props> = ({ data: { launches } }) => {
+  // console.log(data);
   return (
     <div>
-      <h3>All spaceX launches</h3>
-      {!!data.launches &&
-        data.launches?.map(
-          (launch, i) => !!launch && <p key={i}>{launch.mission_name}</p>
+      {!!launches &&
+        launches?.map(
+          (launch, i) =>
+            !!launch && (
+              <div className="card card-body mb-3">
+                <div className="row">
+                  <div className="col-md-9">
+                    <h4>Mission: {launch.mission_name}</h4>
+                    <p>Date: {launch.launch_date_local}</p>
+                  </div>
+                  <div className="col-md-3">
+                    <button className="btn btn-secondary">Launch Info</button>
+                  </div>
+                </div>
+              </div>
+            )
         )}
     </div>
   );

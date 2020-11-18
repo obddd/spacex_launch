@@ -11,8 +11,8 @@ function App() {
         alt="spaceX"
         style={{ width: 300, display: 'block', margin: 'auto' }}
       />
-      {/* <LaunchContainer />
-      <LaunchInfoContainer /> */}
+      <LaunchContainer />
+      {/* <LaunchInfoContainer /> */}
     </div>
   );
 }

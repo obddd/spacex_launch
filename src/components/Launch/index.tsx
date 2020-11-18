@@ -13,7 +13,12 @@ const LaunchContainer = () => {
     return <div>Error while fetching data</div>;
   }
 
-  return <Launch data={data} />;
+  return (
+    <>
+      <h1 className="display-4 my-3">Launches</h1>
+      <Launch data={data} />
+    </>
+  );
 };
 
 export default LaunchContainer;
