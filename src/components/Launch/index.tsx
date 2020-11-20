@@ -1,5 +1,6 @@
 import React from 'react';
 import { useLaunchQuery } from '../../generated/graphql';
+import MissionKey from '../MissionKey/MissionKey';
 import Launch from './Launch';
 
 const LaunchContainer = () => {
@@ -16,6 +17,7 @@ const LaunchContainer = () => {
   return (
     <>
       <h1 className="display-4 my-3">Launches</h1>
+      <MissionKey />
       <Launch data={data} />
     </>
   );
