@@ -1,13 +1,14 @@
 import React from 'react';
 import { LaunchQuery } from '../../generated/graphql';
 import classNames from 'classnames';
+import { Link } from 'react-router-dom';
+import moment from 'moment';
 
 interface Props {
   data: LaunchQuery;
 }
 
 const Launch: React.FC<Props> = ({ data: { launches } }) => {
-  // console.log(data);
   return (
     <div>
       {!!launches &&
@@ -28,10 +29,20 @@ const Launch: React.FC<Props> = ({ data: { launches } }) => {
                         {launch.mission_name}
                       </span>
                     </h4>
-                    <p>Date: {launch.launch_date_local}</p>
+                    <p>
+                      Date:{' '}
+                      {moment(launch.launch_date_local).format(
+                        'YYYY-MM-DD HH:mm'
+                      )}
+                    </p>
                   </div>
                   <div className="d-flex col-md-3 justify-content-center align-items-center">
-                    <button className="btn btn-secondary">Launch Info</button>
+                    <Link
+                      to={`/launch/${launch.flight_number}`}
+                      className="btn btn-secondary"
+                    >
+                      Launch Info
+                    </Link>
                   </div>
                 </div>
               </div>
