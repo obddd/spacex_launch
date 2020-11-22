@@ -44,4 +44,4 @@ jobs:
     
     # Deploy Surge
     - name: Deploy React App to Surge
-      run: surge ./build  spacex_launches_apollo.surge.sh --token ${{ secrets.SURGE_TOKEN }}
+      run: surge ./build  apollo_spacex_launches.surge.sh --token ${{ secrets.SURGE_TOKEN }}
